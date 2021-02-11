@@ -19,15 +19,19 @@ En este ejercicio se va a construír un modelo de clases para la capa lógica de
 
 1. Configure la aplicación para que funcione bajo un esquema de inyección de dependencias, tal como se muestra en el diagrama anterior.
 
-
 	Lo anterior requiere:
 
 	* Agregar las dependencias de Spring.
 	* Agregar la configuración de Spring.
 	* Configurar la aplicación -mediante anotaciones- para que el esquema de persistencia sea inyectado al momento de ser creado el bean 'BlueprintServices'.
+	
+	> RT: Se agregaron la anotacion @Component("inmemory") para la clase InMemoryBlueprintPersistence, y en la clase BlueprintsServices
+	> las anotaciones @Autowired y @Qualifier("inmemory"), adiconalmente se creo el archivo applicationContext.xml en la carpeta
+	> resources ubicada en el directorio main.
 
-
-2. Complete los operaciones getBluePrint() y getBlueprintsByAuthor(). Implemente todo lo requerido de las capas inferiores (por ahora, el esquema de persistencia disponible 'InMemoryBlueprintPersistence') agregando las pruebas correspondientes en 'InMemoryPersistenceTest'.
+2. Complete los operaciones getBluePrint() y getBlueprintsByAuthor(). Implemente todo lo requerido de las capas inferiores 
+   (por ahora, el esquema de persistencia disponible 'InMemoryBlueprintPersistence') agregando las pruebas correspondientes 
+   en 'InMemoryPersistenceTest'.
 
 3. Haga un programa en el que cree (mediante Spring) una instancia de BlueprintServices, y rectifique la funcionalidad del mismo: registrar planos, consultar planos, registrar planos específicos, etc.
 

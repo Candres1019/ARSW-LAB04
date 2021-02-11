@@ -10,13 +10,15 @@ import edu.eci.arsw.blueprints.model.Point;
 import edu.eci.arsw.blueprints.persistence.BlueprintNotFoundException;
 import edu.eci.arsw.blueprints.persistence.BlueprintPersistenceException;
 import edu.eci.arsw.blueprints.persistence.BlueprintsPersistence;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.stereotype.Component;
+
+import java.util.*;
 
 /**
  *
  * @author hcadavid
  */
+@Component("inmemory")
 public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     private final Map<Tuple<String,String>,Blueprint> blueprints=new HashMap<>();
@@ -26,7 +28,6 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
         Point[] pts=new Point[]{new Point(140, 140),new Point(115, 115)};
         Blueprint bp=new Blueprint("_authorname_", "_bpname_ ",pts);
         blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
-        
     }    
     
     @Override
@@ -41,9 +42,24 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     @Override
     public Blueprint getBlueprint(String author, String bprintname) throws BlueprintNotFoundException {
-        return blueprints.get(new Tuple<>(author, bprintname));
+        if((blueprints.get(new Tuple<>(author, bprintname)) != null)){
+            return blueprints.get(new Tuple<>(author, bprintname));
+        }
+        throw new BlueprintNotFoundException("Blueprint no encontrado");
     }
 
-    
-    
+    @Override
+    public Set<Blueprint> getBlueprintsByAuthor(String author) throws BlueprintNotFoundException {
+        Set<Blueprint> blueprintSet = new HashSet<Blueprint>();
+        for (Tuple<String,String> blueprintKey : blueprints.keySet()){
+            if(blueprintKey.getElem1().equals(author)){
+                blueprintSet.add(blueprints.get(blueprintKey));
+            }
+        }
+        if(blueprintSet.size() != 0){
+            return blueprintSet;
+        }
+        throw new BlueprintNotFoundException("Blueprints no encontrados");
+    }
+
 }
