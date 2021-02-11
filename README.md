@@ -32,6 +32,13 @@ En este ejercicio se va a construír un modelo de clases para la capa lógica de
 2. Complete los operaciones getBluePrint() y getBlueprintsByAuthor(). Implemente todo lo requerido de las capas inferiores 
    (por ahora, el esquema de persistencia disponible 'InMemoryBlueprintPersistence') agregando las pruebas correspondientes 
    en 'InMemoryPersistenceTest'.
+   
+   > RT : Se agrego a la interfaz "BlueprintsPersistence" el metodo "getBlueprintsByAuthor()" y se implemento en la clase
+   > "InMemoryBlueprintPersistence" adiconalmente se generaron 4 pruebas 2 por metodo agregado.\
+   > Impl:
+   > ![](./img/punto2_impl.PNG)
+   > Test:
+   > ![](./img/punto2_test.PNG)
 
 3. Haga un programa en el que cree (mediante Spring) una instancia de BlueprintServices, y rectifique la funcionalidad del mismo: registrar planos, consultar planos, registrar planos específicos, etc.
 
