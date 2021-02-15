@@ -24,7 +24,6 @@ import org.springframework.stereotype.Service;
 public class BlueprintsServices {
    
     @Autowired
-    @Qualifier("inmemory")
     BlueprintsPersistence bpp;
     
     public void addNewBlueprint(Blueprint bp){
