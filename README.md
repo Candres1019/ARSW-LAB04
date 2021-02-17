@@ -73,8 +73,14 @@ planos arquitectónicos de una prestigiosa compañia de diseño.
    comprobando que sólo cambiando la posición de las anotaciones -sin cambiar nada más-, el programa retorne los planos
    filtrados de la manera (A) o de la manera (B).
    > Pruebas:
+   > 
    > ![](./img/punto5_Pruebas.PNG)
+   > 
    > Cambio de anotaciones, se debe cambiar la anotacion qualifier:
+   > 
    > ![](./img/punto5_qualifier.PNG)
+   > 
    > Main en funcionamiento:
+   > 
    > ![](./img/punto5_corriendo.PNG)
+   > 
