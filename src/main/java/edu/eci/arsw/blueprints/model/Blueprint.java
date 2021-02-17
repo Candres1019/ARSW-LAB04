@@ -45,6 +45,16 @@ public class Blueprint {
         this.points.add(p);
     }
 
+    public void deletePoint(Point p){
+        this.points.remove(p);
+    }
+
+    public void deletePoints(List<Point> list){
+        for (Point p: list){
+            deletePoint(p);
+        }
+    }
+
     @Override
     public String toString() {
         return "Blueprint{" + "author=" + author + ", name=" + name + '}';
@@ -85,7 +95,10 @@ public class Blueprint {
         
         return true;
     }
-    
-    
-    
+
+
+    public void updatePoint(List<Point> update) {
+        this.points=update;
+
+    }
 }
