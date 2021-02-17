@@ -21,31 +21,35 @@ public class Main {
         Blueprint bp1 = new Blueprint("riot", "lolcito", pts1);
         Blueprint bp2 = new Blueprint("riot", "valorant", pts2);
         try {
+            System.out.println("---------------------------------------------");
             //registrar planos
             bl.addNewBlueprint(bp0);
             bl.addNewBlueprint(bp1);
             bl.addNewBlueprint(bp2);
             //consultar planos
-            System.out.println(bl.getBlueprintsByAuthor("riot"));
+            System.out.println("getBlueprintsByAuthor(riot) : " + bl.getBlueprintsByAuthor("riot"));
             //consultar especificos
-            System.out.println(bl.getBlueprint("mack", "mypaint"));
+            System.out.println("getBlueprint(mack, mypaint) : " + bl.getBlueprint("mack", "mypaint"));
             //consultar todos
-            System.out.println(bl.getAllBlueprints());
+            System.out.println("getAllBlueprints() : " + bl.getAllBlueprints());
 
 
         } catch (BlueprintPersistenceException | BlueprintNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println("Antes" +pts0);
-        System.out.println("Despues" +bl.filterBlueprint(bp0).getPoints());
-        System.out.println("Antes"  +pts1);
-        System.out.println("Despues" +bl.filterBlueprint(bp1).getPoints());
-        System.out.println("Antes" +pts2);
-        System.out.println("Despues" +bl.filterBlueprint(bp2).getPoints());
-
-
-
+        System.out.println("---------------------------------------------");
+        System.out.println(bp0.getName());
+        System.out.println("Puntos Antes: " + bp0.getPointsString());
+        System.out.println("Despues" +bl.filterBlueprint(bp0).getPointsString());
+        System.out.println("---------------------------------------------");
+        System.out.println(bp1.getName());
+        System.out.println("Puntos Antes: " + bp1.getPointsString());
+        System.out.println("Despues" +bl.filterBlueprint(bp1).getPointsString());
+        System.out.println("---------------------------------------------");
+        System.out.println(bp2.getName());
+        System.out.println("Puntos Antes: " + bp2.getPointsString());
+        System.out.println("Despues" +bl.filterBlueprint(bp2).getPointsString());
+        System.out.println("---------------------------------------------");
     }
-
 
 }

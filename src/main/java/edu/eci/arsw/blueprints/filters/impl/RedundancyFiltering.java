@@ -3,7 +3,6 @@ package edu.eci.arsw.blueprints.filters.impl;
 import edu.eci.arsw.blueprints.filters.Filter;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class RedundancyFiltering implements Filter {
         update.add(listPoint.get(0));
         for (int i = 1; i < listPoint.size(); i++) {
             Point point = listPoint.get(i - 1);
-            if (!(point.getX()==listPoint.get(i).getX() && point.getY()==listPoint.get(i).getY()) ) {
+            if (!(point.getX() == listPoint.get(i).getX() && point.getY() == listPoint.get(i).getY())) {
                 update.add(listPoint.get(i));
             }
         }

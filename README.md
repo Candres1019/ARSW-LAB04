@@ -57,13 +57,24 @@ planos arquitectónicos de una prestigiosa compañia de diseño.
    simplemente submuestrando, antes de retornarlos. Ajuste la aplicación (agregando las abstracciones e implementaciones
    que considere) para que a la clase BlueprintServices se le inyecte uno de dos posibles 'filtros' (o eventuales
    futuros filtros). No se contempla el uso de más de uno a la vez:
-   ![](./img/punto4_estructura.PNG)
+
+    * Estructura de la solucion:
+
+      ![](./img/punto4_estructura.PNG)
     * (A) Filtrado de redundancias: suprime del plano los puntos consecutivos que sean repetidos.
+
       ![](./img/punto4_filtro_A.PNG)
+
     * (B) Filtrado de submuestreo: suprime 1 de cada 2 puntos del plano, de manera intercalada.
+
       ![](./img/punto4_filtro_B.PNG)
+
 5. Agrege las pruebas correspondientes a cada uno de estos filtros, y pruebe su funcionamiento en el programa de prueba,
    comprobando que sólo cambiando la posición de las anotaciones -sin cambiar nada más-, el programa retorne los planos
    filtrados de la manera (A) o de la manera (B).
-   ![](./img/punto5_Pruebas.PNG)
-   ![](./img/punto5_qualifier.PNG)
+   > Pruebas:
+   > ![](./img/punto5_Pruebas.PNG)
+   > Cambio de anotaciones, se debe cambiar la anotacion qualifier:
+   > ![](./img/punto5_qualifier.PNG)
+   > Main en funcionamiento:
+   > ![](./img/punto5_corriendo.PNG)
